@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>app.svg</file>
+        <file>btrfs_error.png</file>
+        <file>btrfs_missing.png</file>
+        <file>btrfs_ok.png</file>
+        <file>hhd_ok.png</file>
+        <file>hhd_ko.png</file>
+        <file>hhd_alarm.png</file>
+    </qresource>
+</RCC>

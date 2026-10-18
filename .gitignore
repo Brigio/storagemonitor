@@ -1,0 +1,23 @@
+# Build directories - anywhere in the project
+build/
+build-*/
+cmake-build-*/
+
+# Qt Creator local settings
+.qtcreator/
+**/.qtcreator/
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# Ninja generated files
+build.ninja
+.ninja_deps
+.ninja_log
+EOF

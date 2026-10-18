@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[Unit]
+Description=Storage Monitor Agent - Btrfs and SMART monitoring daemon
+After=local-fs.target dbus.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/storage-monitor-agent
+
+User=root
+Group=root
+
+StateDirectory=storage-monitor-agent
+StateDirectoryMode=0755
+
+RuntimeDirectory=storage-monitor-agent
+RuntimeDirectoryMode=0755
+
+WorkingDirectory=/var/lib/storage-monitor-agent
+
+Restart=on-failure
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=storage-monitor-agent
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Btrfs Storage
+Comment=Monitor and manage Btrfs filesystems
+Exec=btrfs-storage
+Icon=btrfs-storage
+Terminal=false
+Categories=System;Filesystem;
+StartupNotify=true

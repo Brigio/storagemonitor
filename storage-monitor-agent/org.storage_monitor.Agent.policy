@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+
+<policyconfig>
+
+    <vendor>Storage Monitor</vendor>
+
+    <action id="org.storage_monitor.agent.balance.start">
+        <description>Start a Btrfs balance</description>
+        <message>Authentication is required to start a Btrfs balance</message>
+
+        <defaults>
+            <allow_any>no</allow_any>
+            <allow_inactive>auth_admin</allow_inactive>
+            <allow_active>auth_admin_keep</allow_active>
+        </defaults>
+    </action>
+
+    <action id="org.storage_monitor.agent.balance.cancel">
+        <description>Cancel a Btrfs balance</description>
+        <message>Authentication is required to cancel a Btrfs balance</message>
+
+        <defaults>
+            <allow_any>no</allow_any>
+            <allow_inactive>auth_admin</allow_inactive>
+            <allow_active>auth_admin_keep</allow_active>
+        </defaults>
+    </action>
+    <action id="org.storage_monitor.agent.events.acknowledge">
+        <description>Acknowledge storage monitoring events</description>
+        <message>Authentication is required to acknowledge a storage monitoring event</message>
+
+        <defaults>
+            <allow_any>no</allow_any>
+            <allow_inactive>auth_admin</allow_inactive>
+            <allow_active>auth_admin_keep</allow_active>
+        </defaults>
+    </action>
+
+    <action id="org.storage_monitor.agent.events.resolve">
+        <description>Resolve storage monitoring events</description>
+        <message>Authentication is required to resolve a storage monitoring event</message>
+
+        <defaults>
+            <allow_any>no</allow_any>
+            <allow_inactive>auth_admin</allow_inactive>
+            <allow_active>auth_admin_keep</allow_active>
+        </defaults>
+    </action>
+
+    <action id="org.storage_monitor.agent.events.clear">
+        <description>Clear resolved storage monitoring event history</description>
+        <message>Authentication is required to clear resolved storage monitoring event history</message>
+
+        <defaults>
+            <allow_any>no</allow_any>
+            <allow_inactive>auth_admin</allow_inactive>
+            <allow_active>auth_admin_keep</allow_active>
+        </defaults>
+</action>
+
+<action id="org.storage_monitor.agent.device.add">
+    <description>Add a device to a Btrfs filesystem</description>
+    <message>Authentication is required to add a device to a Btrfs filesystem</message>
+
+    <defaults>
+        <allow_any>no</allow_any>
+        <allow_inactive>auth_admin</allow_inactive>
+        <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+</action>
+
+<action id="org.storage_monitor.agent.device.remove">
+    <description>Remove a missing Btrfs device</description>
+    <message>Authentication is required to remove a missing Btrfs device</message>
+
+    <defaults>
+        <allow_any>no</allow_any>
+        <allow_inactive>auth_admin</allow_inactive>
+        <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+</action>
+
+<action id="org.storage_monitor.agent.scrub.start">
+    <description>Start a Btrfs scrub</description>
+    <message>Authentication is required to start a Btrfs scrub</message>
+
+    <defaults>
+        <allow_any>no</allow_any>
+        <allow_inactive>auth_admin</allow_inactive>
+        <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+</action>
+
+<action id="org.storage_monitor.agent.scrub.cancel">
+    <description>Cancel a Btrfs scrub</description>
+    <message>Authentication is required to cancel a Btrfs scrub</message>
+
+    <defaults>
+        <allow_any>no</allow_any>
+        <allow_inactive>auth_admin</allow_inactive>
+        <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+</action>
+
+<action id="org.storage_monitor.agent.scrub.configure">
+    <description>Configure automatic Btrfs scrub</description>
+    <message>Authentication is required to configure automatic Btrfs scrub</message>
+
+    <defaults>
+        <allow_any>no</allow_any>
+        <allow_inactive>auth_admin</allow_inactive>
+        <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+</action>
+
+<action id="org.storage_monitor.agent.replace.start">
+    <description>Replace a Btrfs device</description>
+    <message>Authentication is required to replace a Btrfs device</message>
+
+    <defaults>
+        <allow_any>no</allow_any>
+        <allow_inactive>auth_admin</allow_inactive>
+        <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+</action>
+
+<action id="org.storage_monitor.agent.replace.cancel">
+    <description>Cancel a Btrfs device replacement</description>
+    <message>Authentication is required to cancel a Btrfs device replacement</message>
+
+    <defaults>
+        <allow_any>no</allow_any>
+        <allow_inactive>auth_admin</allow_inactive>
+        <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+</action>
+
+</policyconfig>
