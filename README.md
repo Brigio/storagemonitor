@@ -105,7 +105,7 @@ is closed or restarted.
 Storage Monitor is intended for Linux systems using:
 
 - Qt 6
-- CMake 3.16 or newer
+- CMake 3.16 or newer (required when building from source)
 - Btrfs userspace tools (`btrfs-progs`)
 - `smartmontools`
 - systemd
@@ -118,7 +118,48 @@ A working Btrfs filesystem is required for Btrfs management functionality.
 SMART availability depends on the capabilities of the underlying storage
 device and controller.
 
-## Build
+## Installation
+
+### Arch Linux / CachyOS
+
+A prebuilt Arch Linux package is available from the
+[GitHub Releases](https://github.com/Brigio/storagemonitor/releases) page.
+
+For the current release, download:
+
+`storage-monitor-1.0.0-1-x86_64.pkg.tar.zst`
+
+Install it with:
+
+```bash
+sudo pacman -U ./storage-monitor-1.0.0-1-x86_64.pkg.tar.zst
+```
+
+Then enable and start the monitoring daemon:
+
+```bash
+sudo systemctl enable --now storage-monitor-agent
+```
+
+Launch the graphical application with:
+
+```bash
+btrfs-storage
+```
+
+or from the desktop application menu.
+
+Optional: install `msmtp` if you want to use email notifications.
+
+The prebuilt package currently targets `x86_64` Arch Linux compatible systems.
+
+### Build from source
+
+On Arch Linux / CachyOS, the required build tools can be installed with:
+
+```bash
+sudo pacman -S --needed base-devel cmake ninja qt6-base btrfs-progs smartmontools polkit
+```
 
 Clone the repository:
 
@@ -134,15 +175,13 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 ```
 
-## Install
-
 Install the project system-wide:
 
 ```bash
 sudo cmake --install build --prefix /usr
 ```
 
-Reload systemd and start the monitoring daemon:
+Reload systemd and enable the monitoring daemon:
 
 ```bash
 sudo systemctl daemon-reload
@@ -155,13 +194,11 @@ Check that the daemon is running:
 systemctl status storage-monitor-agent
 ```
 
-The graphical application can then be started with:
+Launch the graphical application with:
 
 ```bash
 btrfs-storage
 ```
-
-or from the desktop application menu.
 
 ## Security model
 
@@ -183,15 +220,13 @@ maintenance or changing the device layout of a Btrfs filesystem.
 
 ## Project status
 
-Current release: **v1.0.0**
-
-Version 1.0.0 provides the initial monitoring and Btrfs management feature set.
-The project is still evolving and additional functionality may be introduced
-in future releases.
+The project delivers a core feature set for monitoring and Btrfs management.
+Development is active, and additional functionality will be introduced in
+future releases.
 
 ## License
 
 Storage Monitor is free software licensed under the
 **GNU General Public License v3.0 or later** (`GPL-3.0-or-later`).
 
-See the `LICENSE` files included with the source code for details.
+See the `LICENSE` file included with the source code for details.
