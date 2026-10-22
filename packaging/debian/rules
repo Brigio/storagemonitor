@@ -12,4 +12,4 @@ override_dh_auto_test:
 	:
 
 override_dh_installsystemd:
-	dh_installsystemd --no-start --no-enable
+	dh_installsystemd --no-start --no-enable --no-stop-on-upgrade
