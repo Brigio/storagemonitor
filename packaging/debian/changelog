@@ -1,0 +1,5 @@
+storage-monitor (1.0.0-1) noble; urgency=medium
+
+  * Initial Ubuntu 24.04 package for Storage Monitor v1.0.0.
+
+ -- Ottoponti <ottoponti@local>  Thu, 22 Oct 2026 13:00:00 +0200

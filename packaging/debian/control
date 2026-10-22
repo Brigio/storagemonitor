@@ -1,0 +1,31 @@
+Source: storage-monitor
+Section: admin
+Priority: optional
+Maintainer: Ottoponti <ottoponti@local>
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ ninja-build,
+ qt6-base-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/Brigio/storagemonitor
+Rules-Requires-Root: no
+
+Package: storage-monitor
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ btrfs-progs,
+ smartmontools,
+ polkitd,
+ libqt6sql6-sqlite,
+ util-linux,
+ dbus,
+ systemd
+Suggests:
+ msmtp
+Description: Btrfs and SMART storage monitoring application
+ Storage Monitor is a Qt 6 desktop application for monitoring SMART
+ device health and managing Btrfs filesystems through a privileged
+ system D-Bus daemon.

@@ -1,0 +1,23 @@
+Description: Build with Qt 6.4
+ QTimeZone::UTC is not available in Qt 6.4.
+ Use the compatible Qt::UTC overload while preserving the same behavior.
+Author: Ottoponti <ottoponti@local>
+Forwarded: not-needed
+Last-Update: 2026-10-22
+
+--- a/btrfs-storage/mainwindow.cpp
++++ b/btrfs-storage/mainwindow.cpp
+@@ -2944,11 +2944,11 @@
+ 
+     // LAST SUCCESSFUL SCRUB
+     //ui->lblLastScrub->setText(lastSuccessfulEpoch > 0 ? QStringLiteral("Last scrub: %1").arg(QDateTime::fromSecsSinceEpoch(lastSuccessfulEpoch, Qt::UTC).toLocalTime().toString(QStringLiteral("dd/MM/yyyy HH:mm:ss"))) : QStringLiteral("Last scrub: -"));
+-    ui->lblLastScrub->setText(lastSuccessfulEpoch > 0 ? QStringLiteral("Last scrub: %1").arg(QDateTime::fromSecsSinceEpoch(lastSuccessfulEpoch, QTimeZone::UTC).toLocalTime().toString(QStringLiteral("dd/MM/yyyy HH:mm:ss"))) : QStringLiteral("Last scrub: -"));
++    ui->lblLastScrub->setText(lastSuccessfulEpoch > 0 ? QStringLiteral("Last scrub: %1").arg(QDateTime::fromSecsSinceEpoch(lastSuccessfulEpoch, Qt::UTC).toLocalTime().toString(QStringLiteral("dd/MM/yyyy HH:mm:ss"))) : QStringLiteral("Last scrub: -"));
+ 
+     // NEXT AUTOMATIC SCRUB
+     //ui->lblNextScrub->setText(nextDueEpoch > 0 ? QStringLiteral("Next scrub: %1").arg(QDateTime::fromSecsSinceEpoch(nextDueEpoch, Qt::UTC).toLocalTime().toString(QStringLiteral("dd/MM/yyyy HH:mm:ss"))) : QStringLiteral("Next scrub: -"));
+-    ui->lblNextScrub->setText(nextDueEpoch > 0 ? QStringLiteral("Next scrub: %1").arg(QDateTime::fromSecsSinceEpoch(nextDueEpoch, QTimeZone::UTC).toLocalTime().toString(QStringLiteral("dd/MM/yyyy HH:mm:ss"))) : QStringLiteral("Next scrub: -"));
++    ui->lblNextScrub->setText(nextDueEpoch > 0 ? QStringLiteral("Next scrub: %1").arg(QDateTime::fromSecsSinceEpoch(nextDueEpoch, Qt::UTC).toLocalTime().toString(QStringLiteral("dd/MM/yyyy HH:mm:ss"))) : QStringLiteral("Next scrub: -"));
+ 
+     qInfo().noquote() << "Automatic scrub schedule received:" << mountPoint << "last:" << lastSuccessfulEpoch << "next:" << nextDueEpoch;
+ }
