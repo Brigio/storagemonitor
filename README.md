@@ -122,7 +122,45 @@ device and controller.
 
 ### Arch Linux / CachyOS
 
-A prebuilt Arch Linux package is available from the
+#### AUR
+
+Storage Monitor is available from the Arch User Repository as:
+
+`storage-monitor`
+
+Install it with an AUR helper such as:
+
+```bash
+yay -S storage-monitor
+```
+
+or:
+
+```bash
+paru -S storage-monitor
+```
+
+Then enable and start the monitoring daemon:
+
+```bash
+sudo systemctl enable --now storage-monitor-agent
+```
+
+Launch the graphical application with:
+
+```bash
+btrfs-storage
+```
+
+or from the desktop application menu.
+
+The AUR package builds Storage Monitor from the official release sources.
+
+Optional: install `msmtp` if you want to use email notifications.
+
+#### Prebuilt package
+
+A prebuilt Arch Linux package is also available from the
 [GitHub Releases](https://github.com/Brigio/storagemonitor/releases) page.
 
 For the current release, download:
@@ -152,6 +190,39 @@ or from the desktop application menu.
 Optional: install `msmtp` if you want to use email notifications.
 
 The prebuilt package currently targets `x86_64` Arch Linux compatible systems.
+
+### Ubuntu 24.04 LTS
+
+A prebuilt package for **Ubuntu 24.04 LTS (amd64)** is available from the
+[GitHub Releases](https://github.com/Brigio/storagemonitor/releases) page.
+
+For the current release, download:
+
+`storage-monitor_1.0.0-1_ubuntu24.04_amd64.deb`
+
+Install it with:
+
+```bash
+sudo apt install ./storage-monitor_1.0.0-1_ubuntu24.04_amd64.deb
+```
+
+Then enable and start the monitoring daemon:
+
+```bash
+sudo systemctl enable --now storage-monitor-agent
+```
+
+Launch the graphical application with:
+
+```bash
+btrfs-storage
+```
+
+or from the desktop application menu.
+
+Optional: install `msmtp` if you want to use email notifications.
+
+The package was built and tested on **Ubuntu 24.04.4 LTS amd64**.
 
 ### Build from source
 
@@ -220,9 +291,12 @@ maintenance or changing the device layout of a Btrfs filesystem.
 
 ## Project status
 
-The project delivers a core feature set for monitoring and Btrfs management.
-Development is active, and additional functionality will be introduced in
-future releases.
+Latest stable release: **v1.0.0**
+
+Storage Monitor is under active development.
+
+Future releases may introduce additional monitoring, maintenance and
+filesystem-management functionality.
 
 ## License
 
